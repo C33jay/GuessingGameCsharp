@@ -34,7 +34,8 @@ namespace GuessingGame
                     //Allows the user to attempt guessing the right number up to six times
                     for(int i =1; i < 7; i++)
                     {
-                    
+                    try
+                    {
                         //Prompts user to enter a number and stores the number in the guess variable
                         Console.WriteLine("Guess a Number:");
                         int Guess =int.Parse(Console.ReadLine());
@@ -48,6 +49,11 @@ namespace GuessingGame
                         {
                             Console.WriteLine("That was wrong!, You have made " + i + " out of 6 chances");  
                         }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }    
                     if (i == 6)
                     {
                 
@@ -68,6 +74,8 @@ namespace GuessingGame
                     //Allows the user to attempt guessing the right number up to four times
                     for(int i =1; i < 5; i++)
                     {
+                    try
+                    {
                         //Prompts user to enter a number and stores the number in the guess variable
                         Console.WriteLine("Guess a Number:");
                         int Guess =int.Parse(Console.ReadLine());
@@ -82,6 +90,11 @@ namespace GuessingGame
                             Console.WriteLine("That was wrong! You have made " + i + " out of 4 chances");
                 
                         }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }    
                     if (i == 4)
                     {
                         Console.WriteLine("Game Over!");
@@ -98,6 +111,9 @@ namespace GuessingGame
                     //Allows the user to attempt guessing the right number up to three times              
                     for(int i =1; i < 4; i++)
                     {
+                    try
+                    {
+
                         //Prompts user to enter a number and stores the number in the guess variable
                         Console.WriteLine("Guess a Number:");
                         int Guess =int.Parse(Console.ReadLine());
@@ -110,6 +126,11 @@ namespace GuessingGame
                         {
                             Console.WriteLine("That was wrong! You have made " + i + " out of 3 chances");
                         }
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }    
                     if (i==3)
                     {
                         Console.WriteLine("Game Over!");
